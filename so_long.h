@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njohanne <njohanne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:40:34 by njohanne          #+#    #+#             */
-/*   Updated: 2022/05/29 14:19:06 by njohanne         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:02:20 by njohanne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ typedef struct s_map
 	int		p_x;
 	int		p_y;
 	void	*mlx;
-	void	*win;	
+	void	*win;
+	void	*img_p;
+	char	*step;
 }	t_map;
 
 void	ft_error(char *str);

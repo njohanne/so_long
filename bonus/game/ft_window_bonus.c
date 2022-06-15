@@ -6,7 +6,7 @@
 /*   By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 14:07:12 by njohanne          #+#    #+#             */
-/*   Updated: 2022/06/05 16:02:21 by njohanne         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:05:36 by njohanne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_line_window_1(char *line, t_map *map, int i)
 			img = mlx_xpm_file_to_image(map->mlx, "./bonus/img/free.xpm", &a, &a);
 		if (line[j] == 'P')
 		{
-			img = mlx_xpm_file_to_image(map->mlx, "./bonus/img/play.xpm", &a, &a);
+			img = mlx_xpm_file_to_image(map->mlx, map->img_p, &a, &a);
 			map->p_x = j;
 			map->p_y = i;
 		}
@@ -57,7 +57,7 @@ void	ft_line_window(char *line, t_map *map, int i)
 			img = mlx_xpm_file_to_image(map->mlx, "./bonus/img/free.xpm", &a, &a);
 		if (line[j] == 'P')
 		{
-			img = mlx_xpm_file_to_image(map->mlx, "./bonus/img/play.xpm", &a, &a);
+			img = mlx_xpm_file_to_image(map->mlx, map->img_p, &a, &a);
 			map->p_x = j;
 			map->p_y = i;
 		}
@@ -74,7 +74,6 @@ void	ft_line_window(char *line, t_map *map, int i)
 int	ft_img_to_window(t_map *map)
 {
 	int			i;
-	char		*steps;
 	static int	step = 0;
 	static int	flag = 0;
 
@@ -89,7 +88,7 @@ int	ft_img_to_window(t_map *map)
 		while (map->map[++i])
 			ft_line_window_1(map->map[i], map, i);	
 	}
-//	steps = ft_steps(steps);
+	mlx_string_put(map->mlx, map->win, 15, 15, 0xFFFFFF, map->step);
 	flag++;
 	if (flag == 100)
 	 	flag = 0;
@@ -114,6 +113,7 @@ int	cloze(void *vp)
 
 void	ft_window_bonus(t_map *map)
 {
+	map->img_p = "./bonus/img/play.xpm";
 	map->mlx = mlx_init();
 	map->win = mlx_new_window(map->mlx, map->stl * 40, map->str * 40,
 			"so_long_bonus");
@@ -123,4 +123,5 @@ void	ft_window_bonus(t_map *map)
 	mlx_loop_hook(map->mlx, &ft_img_to_window, map);
 	mlx_loop(map->mlx);
 	free (map->map);
+	free (map->step);
 }
