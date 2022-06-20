@@ -6,7 +6,7 @@
 #    By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/09 14:54:46 by njohanne          #+#    #+#              #
-#    Updated: 2022/06/01 12:14:29 by njohanne         ###   ########.fr        #
+#    Updated: 2022/06/20 07:51:51 by njohanne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ SRC		=	so_long.c \
 			utils/ft_strjoin.c \
 			utils/ft_split.c \
 			utils/ft_putnbr.c \
-			mandatory/ft_window.c \
-			mandatory/ft_game.c \
-			mandatory/check_map/ft_check_map.c \
-			mandatory/check_map/ft_check_requirement.c
+			mand/ft_window.c \
+			mand/ft_game.c \
+			mand/check_map/ft_check_map.c \
+			mand/check_map/ft_check_requirement.c
 
 SRC_BONUS = bonus/so_long_bonus.c \
 			utils/ft_error.c \
@@ -35,7 +35,8 @@ SRC_BONUS = bonus/so_long_bonus.c \
 			bonus/check_map/check_map_bonus.c \
 			bonus/check_map/ft_check_requirement_bonus.c \
 			bonus/game/ft_window_bonus.c \
-			bonus/game/ft_game_bonus.c
+			bonus/game/ft_game_bonus.c \
+			bonus/game/ft_line_window.c
 			
 CC = gcc			
 
@@ -54,6 +55,9 @@ $(NAME) : $(OBJS)
 	make -C ./mlx
 	$(CC) $(OBJS) -L ./mlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	@mv mlx/libmlx.dylib .
+
+%.o: %.c
+	$(CC) -I./mlx -c $< -o $@
 
 bonus: $(BONUS_NAME)
 

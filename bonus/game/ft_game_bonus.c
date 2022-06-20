@@ -6,7 +6,7 @@
 /*   By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:33:18 by njohanne          #+#    #+#             */
-/*   Updated: 2022/06/14 17:01:22 by njohanne         ###   ########.fr       */
+/*   Updated: 2022/06/20 07:38:30 by njohanne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	*ft_img(int keycode)
 {
 	if (keycode == 13)
-		return("./bonus/img/play.xpm");
+		return ("./bonus/img/play.xpm");
 	else if (keycode == 1)
-		return("./bonus/img/coll1.xpm");
+		return ("./bonus/img/playdown.xpm");
 	else if (keycode == 0)
-		return("./bonus/img/exit1.xpm");
+		return ("./bonus/img/playleft.xpm");
 	else
-		return("./bonus/img/fight.xpm");
+		return ("./bonus/img/playright.xpm");
 }
 
 void	ft_game_bonus(int keycode, t_map *map)
@@ -47,5 +47,5 @@ void	ft_game_bonus(int keycode, t_map *map)
 	else if (map->map[new_y][new_x] == 'E' && map->collect == 0)
 		exit (0);
 	map->step = ft_itoa(step);
-	map->img_p = ft_img(keycode);	
+	map->img_p = ft_img(keycode);
 }

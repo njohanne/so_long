@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njohanne <njohanne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:48:11 by njohanne          #+#    #+#             */
-/*   Updated: 2022/05/04 19:23:28 by njohanne         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:21:41 by njohanne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ char	*ft_line_map(char *line, int fd)
 		ft_error("Error: not bits in file\n");
 		return (0);
 	}
-	line = "";
 	while (rd)
 	{
 		line = ft_strjoin(line, buf);
@@ -63,6 +62,7 @@ char	**ft_load_map(int fd)
 		ft_error("Error: not memory for line");
 		return (0);
 	}
+	line = "";
 	line = ft_line_map(line, fd);
 	map = ft_split(line, '\n');
 	free(line);

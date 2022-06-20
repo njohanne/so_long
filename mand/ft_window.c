@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_window.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njohanne <njohanne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 19:06:46 by njohanne          #+#    #+#             */
-/*   Updated: 2022/05/28 13:33:18 by njohanne         ###   ########.fr       */
+/*   Updated: 2022/06/20 07:41:52 by njohanne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ void	ft_line_window(char *line, t_map *map, int i)
 	while (line[++j])
 	{
 		if (line[j] == '1')
-			img = mlx_xpm_file_to_image(map->mlx, "./mandatory/img/wall.xpm", &a, &a);
+			img = mlx_xpm_file_to_image(map->mlx, "./mand/img/w.xpm", &a, &a);
 		if (line[j] == '0')
-			img = mlx_xpm_file_to_image(map->mlx, "./mandatory/img/free.xpm", &a, &a);
+			img = mlx_xpm_file_to_image(map->mlx, "./mand/img/f.xpm", &a, &a);
 		if (line[j] == 'P')
 		{
-			img = mlx_xpm_file_to_image(map->mlx, "./mandatory/img/play.xpm", &a, &a);
+			img = mlx_xpm_file_to_image(map->mlx, "./mand/img/p.xpm", &a, &a);
 			map->p_x = j;
 			map->p_y = i;
 		}
 		if (line[j] == 'E')
-			img = mlx_xpm_file_to_image(map->mlx, "./mandatory/img/exit.xpm", &a, &a);
+			img = mlx_xpm_file_to_image(map->mlx, "./mand/img/e.xpm", &a, &a);
 		if (line[j] == 'C')
-			img = mlx_xpm_file_to_image(map->mlx, "./mandatory/img/coll.xpm", &a, &a);
+			img = mlx_xpm_file_to_image(map->mlx, "./mand/img/c.xpm", &a, &a);
 		mlx_put_image_to_window (map->mlx, map->win, img, j * 40, i * 40);
 	}
 }

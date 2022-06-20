@@ -6,7 +6,7 @@
 /*   By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 14:40:34 by njohanne          #+#    #+#             */
-/*   Updated: 2022/06/14 17:02:20 by njohanne         ###   ########.fr       */
+/*   Updated: 2022/06/20 07:51:01 by njohanne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "mlx/mlx.h"
+// # include <mlx.h>
 # include <fcntl.h>
 
 typedef struct s_map
@@ -52,5 +53,6 @@ int		ft_check_requirement_bonus(t_map *map);
 void	ft_window_bonus(t_map *map);
 void	ft_game_bonus(int keycode, t_map *map);
 char	*ft_itoa(int n);
-
+void	ft_line_window(char *line, t_map *map, int i);
+void	ft_line_window_1(char *line, t_map *map, int i);
 #endif

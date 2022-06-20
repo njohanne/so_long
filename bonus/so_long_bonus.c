@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njohanne <njohanne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: njohanne <njohanne@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 20:22:30 by njohanne          #+#    #+#             */
-/*   Updated: 2022/05/27 14:07:03 by njohanne         ###   ########.fr       */
+/*   Updated: 2022/06/20 07:37:30 by njohanne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int avc, char **avg)
 	if (avc != 2)
 	{
 		ft_error("Error: ./so_long ./*.ber\n");
-		return (0);	
+		return (0);
 	}
 	if (!ft_check_name_file_map(avg[1]))
 		return (0);
